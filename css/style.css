@@ -1,0 +1,212 @@
+@charset "utf-8";
+*{margin:0;padding: 0;box-sizing: border-box;}
+a{text-decoration: none; color:inherit;}
+ul li{list-style: none;}
+img{max-width: 100%;vertical-align: top;}
+button{cursor:pointer;}
+body{width: 100%;height: 100%;}
+@font-face {
+    font-family: 'ONE-Mobile-Title';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.index {
+  background: url(../img/index_back.png) no-repeat center center;
+  min-height: 100vh;
+  background-size: cover;
+  padding-top: 100px;
+     overflow-x: auto;
+}
+
+.index ul {
+  display: flex;
+  flex-wrap: wrap;
+   justify-content: center;
+    gap: 80px;
+    margin: 0 auto;
+
+}
+
+.index ul li {
+     flex: 0 0 auto;
+  position: relative;
+  width: 300px;
+  height: auto;
+  margin-top: 280px;
+text-align: center;
+}
+
+
+.folder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.folder {
+  position: relative;
+  width: 300px;
+  height: 300px; /* 고정 사이즈 */
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.folder img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+   object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+.caption{
+    margin-top: 20px;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 24px;
+    color: #e3ecfd;
+    font-family: 'Pretendard-medium', sans-serif;
+
+}
+.caption span{
+    font-family:'One-Mobile-title', sans-serif;
+    font-size: 36px;
+    color: #F2F7FF;
+    line-height: 2;
+    
+}
+.folder .open {
+  opacity: 0;
+}
+
+.folder:hover .open {
+  opacity: 1;
+}
+
+.folder:hover .closed {
+  opacity: 0;
+}
+
+/* ✅ 반응형: 1600px 이하일 때 */
+@media (max-width: 1600px) {
+    .index{
+        padding-top: 0;
+    }
+  .index ui{
+    flex-wrap: nowrap;
+    margin-top: 180px;
+  }
+    .index ul li {
+    width: 220px;
+  }
+
+  .folder {
+    width: 220px;
+    height: 220px;
+  }
+
+  .caption {
+    font-size: 18px;
+  }
+
+  .caption span {
+    font-size: 24px;
+  }
+}
+/* ✅ 반응형: 1400px 이하일 때 */
+@media (max-width: 1400px) {
+    .index{
+        padding-top: 0;
+    }
+  .index ui{
+    flex-wrap: nowrap;
+    margin-top: 140px;
+  }
+    .index ul li {
+    width: 180px;
+  }
+
+  .folder {
+    width: 180px;
+    height: 180px;
+  }
+
+  .caption {
+    font-size: 16px;
+  }
+
+  .caption span {
+    font-size: 21px;
+  }
+}
+/* ✅ 반응형: 900px 이하일 때 */
+@media (max-width: 960px) {
+    .index{
+        padding-top: 0;
+    }
+  .index ui{
+    flex-wrap: wrap;
+    margin-top: 80px;
+  }
+    .index ul li {
+    width: 160px;
+  }
+
+  .folder {
+    width: 160px;
+    height: 160px;
+  }
+
+  .caption {
+    font-size: 16px;
+  }
+
+  .caption span {
+    font-size:18px;
+  }
+}
+
+/* ✅ 반응형: 768px 이하일 때  */
+@media (max-width: 768px) {
+  .index {
+    padding:  0;
+  }
+
+  .index ul {
+    flex-direction: row;         /* ✅ 잘못된 coli → row로 */
+    flex-wrap: wrap;             /* ✅ 줄 바꿈 허용 */
+    justify-content: center;     /* ✅ 가운데 정렬 */
+    gap:  20px;              /* ✅ 상하/좌우 간격 */
+  }
+
+  .index ul li {
+    width: 45%;                  /* ✅ 반반씩 차지하게 */
+    max-width: 130px;            /* ✅ 너무 커지지 않게 제한 */
+    text-align: center;
+  }
+
+  .folder {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;           /* ✅ 정사각형 유지 */
+  }
+
+  .caption {
+    font-size: 14px;
+  }
+
+  .caption span {
+    font-size: 18px;
+  }
+}
